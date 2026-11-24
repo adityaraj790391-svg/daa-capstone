@@ -1,0 +1,15 @@
+from_node,to_node,distance_km
+WH,A,4
+WH,B,6
+A,B,2
+A,C,5
+B,C,2
+B,D,5
+C,D,3
+C,E,6
+D,E,2
+D,F,4
+E,F,2
+E,G,5
+F,G,3
+G,WH,8

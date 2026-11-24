@@ -1,0 +1,10 @@
+test_dijkstra_returns_shortest_path (test_algorithms.GraphTests.test_dijkstra_returns_shortest_path) ... ok
+test_knapsack_respects_capacity_and_maximizes_value (test_algorithms.KnapsackTests.test_knapsack_respects_capacity_and_maximizes_value) ... ok
+test_merge_sort_orders_values (test_algorithms.SortingTests.test_merge_sort_orders_values) ... ok
+test_parcel_priority_and_deadline (test_algorithms.SortingTests.test_parcel_priority_and_deadline) ... ok
+test_nearest_neighbor_returns_to_start (test_algorithms.TSPTests.test_nearest_neighbor_returns_to_start) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

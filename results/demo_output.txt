@@ -1,0 +1,47 @@
+========================================================================
+                 MINI-COURIER PLANNER - DEMONSTRATION
+========================================================================
+
+1. PARCEL PRIORITIZATION (Merge Sort)
+   Priority: 1 is the highest; earlier deadline breaks a tie.
+   P003: P1, 2h | P010: P1, 3h | P001: P1, 4h | P006: P1, 6h | P008: P2, 5h | P005: P2, 8h | P011: P2, 9h | P002: P2, 10h | P009: P3, 12h | P012: P3, 16h | P004: P3, 18h | P007: P4, 24h
+
+2. VEHICLE PACKING (0/1 Knapsack - Dynamic Programming)
+   Vehicle capacity : 20 kg
+   Selected parcels : P003, P010, P001, P006, P008, P011, P007
+   Total load       : 19 kg
+   Unused capacity  : 1 kg
+   Total value score: 570
+
+   DP table (rows = parcels considered; columns = capacity 0..W):
+        0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20
+    0:   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+    1:   0   0  90  90  90  90  90  90  90  90  90  90  90  90  90  90  90  90  90  90  90
+    2:   0   0  98  98 188 188 188 188 188 188 188 188 188 188 188 188 188 188 188 188 188
+    3:   0   0  98  98 188 193 193 283 283 283 283 283 283 283 283 283 283 283 283 283 283
+    4:   0   0  98  98 188 193 193 283 285 285 375 375 375 375 375 375 375 375 375 375 375
+    5:   0   0  98  98 188 193 193 283 285 285 375 375 375 375 460 460 460 460 460 460 460
+    6:   0   0  98  98 188 193 193 283 285 285 375 375 375 375 460 460 463 463 463 463 548
+    7:   0   0  98  98 188 193 193 283 285 285 375 375 375 450 460 460 463 535 535 538 548
+    8:   0   0  98  98 188 193 193 283 285 285 375 375 375 450 460 460 463 535 535 540 548
+    9:   0   0  98  98 188 193 193 283 285 285 375 375 375 450 460 460 463 535 535 540 548
+   10:   0   0  98  98 188 193 193 283 285 285 375 375 375 450 460 460 463 535 535 540 548
+   11:   0   0  98  98 188 193 193 283 285 285 375 375 375 450 460 460 463 535 535 540 548
+   12:   0   0  98  98 188 193 223 283 285 318 375 375 410 450 460 485 495 535 535 570 570
+
+3. SHORTEST PATHS AND DELIVERY ROUTE
+   Dijkstra is run from each selected stop to build shortest-path distances.
+   Delivery stop order (Nearest Neighbor TSP heuristic):
+   WH (Central Warehouse) -> A (North Market) -> C (City Hospital) -> D (Tech Square) -> E (Green Colony) -> F (Airport Road) -> G (University Gate) -> WH (Central Warehouse)
+   Expanded road path:
+   WH -> A -> B -> C -> D -> E -> F -> G -> WH
+   Total route distance: 26.00 km
+
+4. ALGORITHM COMPLEXITIES
+   Merge Sort          : O(n log n) time, O(n) extra space
+   0/1 Knapsack DP     : O(nW) time and O(nW) space
+   Dijkstra (heap)     : O((V + E) log V) time
+   Nearest Neighbor TSP: O(k^2) time, O(k) extra space
+
+========================================================================
+Demo completed. See README.md and report/ for documentation.

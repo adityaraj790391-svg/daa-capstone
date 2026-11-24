@@ -1,0 +1,9 @@
+node_id,name,location_type
+WH,Central Warehouse,depot
+A,North Market,customer
+B,River Park,customer
+C,City Hospital,customer
+D,Tech Square,customer
+E,Green Colony,customer
+F,Airport Road,customer
+G,University Gate,customer
